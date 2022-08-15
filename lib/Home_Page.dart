@@ -1,11 +1,13 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:rbkei/model/AppMenus.dart';
+import 'package:rbkei/model/AppMenusModel.dart';
 import 'package:rbkei/navigationbarpages.dart/account.dart';
 import 'package:rbkei/navigationbarpages.dart/navhome.dart';
 import 'package:rbkei/navigationbarpages.dart/notification.dart';
 import 'package:rbkei/navigationbarpages.dart/privacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'Pages/Home_Screen.dart';
 
 void main() => runApp(Home_Page());
 
@@ -32,8 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late String UserName;
   int _currentIndex = 0;
   final List<Widget> _children = [
-    navhome(
-    ),
+    HomeScreen(),
     notification(),
     privacy(),
     account(),

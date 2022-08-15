@@ -56,8 +56,10 @@ dependencies:
   flutter_secure_storage: ^5.0.2
   dio: ^4.0.6
   get: ^4.6.1
-  webview_flutter: ^3.0.2
+  webview_flutter: ^2.0.4
   authorization_header: ^1.0.3
+  bot_toast: ^4.0.1
+  flutter_html: ^2.2.1
   
   
 

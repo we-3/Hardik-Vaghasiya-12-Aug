@@ -1,5 +1,8 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:rbkei/home.dart';
+
+import 'Pages/announcement_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,13 +16,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Shool Desk',
       debugShowCheckedModeBanner: false,
+      builder: BotToastInit(),
+      navigatorObservers: [BotToastNavigatorObserver()],
       theme: ThemeData(
         backgroundColor: Colors.grey,
         scaffoldBackgroundColor: Colors.white,
         primaryColor: Colors.white,
       ),
-      home: Home(
-       ),
+      home:Home(),
     );
   }
 

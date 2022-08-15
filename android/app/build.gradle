@@ -49,14 +49,14 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
         versionName flutterVersionName
     }
 
-    signingConfigs {
-        debug {
-            keyAlias 'uploadkeystore'
-            keyPassword 'android'
-            storeFile file('upload-keystore.jks')
-            storePassword 'android'
-        }
-    }
+  //  signingConfigs {
+//        debug {
+//            keyAlias 'uploadkeystore'
+//            keyPassword 'android'
+//            storeFile file('upload-keystore.jks')
+//            storePassword 'android'
+//        }
+  //  }
     
 
     buildTypes {

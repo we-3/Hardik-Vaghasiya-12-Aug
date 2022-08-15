@@ -165,11 +165,17 @@ class _HomeState extends State<Home> {
               'LocalIP': LocalIP,
               'NotificationToken': NotificationToken
             });
-
         if (response.statusCode == 200) {
           var data = jsonDecode(response.body.toString());
-          print(data);
-
+          print('user date  --> '+data.toString());
+          print('userType  --> '+data['userType'].toString());
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setString('LoginType', data['userType'].toString().trim());
+          await prefs.setString('ApiToken', data['token'].toString().trim());
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Home_Page()));
           print('Login');
         } else {
           print('failed');
@@ -341,9 +347,6 @@ class _HomeState extends State<Home> {
                   ),
                   GestureDetector(
                     onTap:  () async {
-                                            
-                      var data;
-                      
                       login(
                         usernameController.text.toString(),
                         passwordController.text.toString(),
@@ -362,11 +365,12 @@ class _HomeState extends State<Home> {
                       String password = passwordController.text;
                       if (UserName != '' && password != '') {
                         print('Successfull');
+
                         loginData.setBool('data', false);
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Home_Page()));
+                        // Navigator.pushReplacement(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => Home_Page()));
                       }
                     },
                     child: Padding(
